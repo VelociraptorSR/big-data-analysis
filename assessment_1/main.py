@@ -167,6 +167,7 @@ def menu():
     return choice
 
 def main():
+    load_from_json()
     while True:
         choice = menu()
         
