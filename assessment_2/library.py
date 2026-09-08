@@ -28,11 +28,15 @@ def add_book():
         if copies < 0:
             print("Copies cannot be less than zero. Please try again. ")
             return
-        books.append(books.append({"ID" : id_counter+1, "Book Title" : title, "Author Name" : author, "Genre" : genre, "Price" : price, "Copies" : copies}))
+        books.append({"ID" : id_counter+1, "Book Title" : title, "Author Name" : author, "Genre" : genre, "Price" : price, "Copies" : copies})
+        id_counter += 1
     except ValueError:
         print("Please try with correct value. ")
         
 def view_catalog():
+    if len(books) == 0:
+        print("No books in the library. ")
+        return
     if len(books)  == 1:
         view_one(books)
     else:
